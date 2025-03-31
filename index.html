@@ -4,13 +4,98 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Sahil Singh | DevOps Engineer</title>
+    <meta name="description" content="Portfolio of Sahil Singh, a DevOps Engineer and Computer Science student specializing in cloud technologies and full-stack development.">
+    <meta name="keywords" content="DevOps, AWS, Docker, Jenkins, Kubernetes, Full Stack Development, Portfolio">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .project-img {
+            background: linear-gradient(45deg, #4a90e2, #63b3ed);
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .project-img i {
+            font-size: 5rem;
+            color: white;
+        }
+        .project-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        #project1 {
+            background: linear-gradient(45deg, #4a90e2, #63b3ed);
+        }
+        #project2 {
+            background: linear-gradient(45deg, #48bb78, #68d391);
+        }
+        #project3 {
+            background: linear-gradient(45deg, #9f7aea, #b794f4);
+        }
+        .about-section-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .education-card {
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-icon {
+            font-size: 3rem;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+        }
+        
+        .education-details {
+            margin-top: 1rem;
+        }
+        
+        .education-details h4 {
+            color: #4a5568;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .about-text {
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        
+        .highlight {
+            color: #4a90e2;
+            font-weight: 600;
+        }
+    </style>
   </head>
   <body>
     <nav id="desktop-nav">
-      <div class="logo">Sahil Singh</div>
+      <div class="logo" onclick="location.href='#profile'">Sahil Singh</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -21,7 +106,7 @@
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo">Sahil Singh</div>
+      <div class="logo" onclick="location.href='#profile'">Sahil Singh</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -38,12 +123,14 @@
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-piczz.png" alt="John Doe profile picture" />
+        <div class="profile-avatar">
+          <i class="fas fa-code"></i>
+        </div>
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Sahil Singh</h1>
-        <p class="section__text__p2">DevOps</p>
+        <p class="section__text__p2">DevOps Engineer & Full Stack Developer</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -52,66 +139,54 @@
             Download CV
           </button>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+            Contact Me
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/sahil-singh-a2732125b/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/amberIS01'"
-          />
+          <a href="https://linkedin.com/in/sahil-singh-a2732125b/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="./assets/linkedin.png"
+              alt="My LinkedIn profile"
+              class="icon"
+            />
+          </a>
+          <a href="https://github.com/amberIS01" target="_blank" rel="noopener noreferrer">
+            <img
+              src="./assets/github.png"
+              alt="My Github profile"
+              class="icon"
+            />
+          </a>
         </div>
       </div>
     </section>
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+      <div class="about-section-grid">
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Education</h3>
+          <div class="education-details">
+            <h4>B.Tech in Computer Engineering</h4>
+            <h4>Specialization in DevOps</h4>
+            <h4>Bennett University, Greater Noida</h4>
+            <h4>Expected Graduation: 2026</h4>
+            <h4>CGPA: <span class="highlight">8.32/10</span></h4>
+          </div>
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>Fresher <br />DevOps</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Tech. Bachelors Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Hi there! I'm Sahil Singh, a third-year B.Tech student specializing in Computer Science 
-              and Engineering with a focus on DevOps. I have a keen interest in automating processes and 
-              enhancing the software development lifecycle. With a solid foundation in tools like Jenkins, 
-              Docker, and AWS, I am dedicated to bridging the gap between development and operations.
-               Outside of my academic pursuits, I enjoy gaming and working out, activities that keep me inspired and motivated.
-            </p>
-          </div>
+        <div class="about-text">
+          <p>
+            I'm a <span class="highlight">passionate DevOps Engineer and Full Stack Developer</span> with a strong foundation in cloud technologies and software development. Currently pursuing my B.Tech degree with a specialization in DevOps, I combine academic excellence with practical experience in building scalable solutions.
+          </p>
+          <p>
+            My expertise spans across <span class="highlight">cloud infrastructure, containerization, and full-stack development</span>. I've successfully led teams in developing cloud-integrated solutions and contributed to open-source projects, improving code maintainability and deployment efficiency.
+          </p>
+          <p>
+            With a proven track record in implementing <span class="highlight">CI/CD pipelines</span> and optimizing <span class="highlight">AI/ML models</span>, I'm constantly seeking opportunities to innovate and create impactful solutions in the tech industry.
+          </p>
         </div>
       </div>
       <img
@@ -127,125 +202,61 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">DevOps</h2>
+            <h2 class="experience-sub-title">Internships</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Linux</h3>
-                  <p>Intermediate</p>
+                <div class="experience-item">
+                  <h3>AICTE Cisco Virtual Internship</h3>
+                  <p class="date">May 2024 - July 2024</p>
+                  <ul>
+                    <li>Engineered 5+ scalable network infrastructures using Cisco Packet Tracer, improving efficiency by 40%</li>
+                    <li>Strengthened network security by implementing advanced configurations, reducing vulnerabilities by 30%</li>
+                  </ul>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AWS</h3>
-                  <p>Basic</p>
+                <div class="experience-item">
+                  <h3>TechSaksham AI Internship</h3>
+                  <p class="date">November 2024 - December 2024</p>
+                  <ul>
+                    <li>Developed an AI-powered spam classification system, improving email filtering accuracy by 92%</li>
+                    <li>Spearheaded 3+ mentorship-driven prototype iterations, earning recognition from Microsoft & SAP experts</li>
+                    <li>Achieved full certification in AI and NLP from Microsoft, SAP, and AICTE</li>
+                  </ul>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Kubernetes</h3>
-                  <p>Basic</p>
+                <div class="experience-item">
+                  <h3>EY GDS Full Stack Web Development Internship</h3>
+                  <p class="date">December 2024 - January 2025</p>
+                  <ul>
+                    <li>Orchestrated the development of Flashline News, a full-stack MERN-based platform, boosting user engagement by 30%</li>
+                    <li>Implemented JWT-based authentication, reducing unauthorized access incidents by 90%</li>
+                    <li>Delivered a feature-rich, interactive UI, improving content accessibility for 500+ daily users</li>
+                  </ul>
                 </div>
               </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Docker</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Jenkins</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              
             </div>
           </div>
-          <!-- <div class="details-container">
-            <h2 class="experience-sub-title">DevOps</h2>
+
+          <div class="details-container">
+            <h2 class="experience-sub-title">Technical Skills</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
+                <div class="skills-section">
+                  <h3>Programming & Scripting</h3>
+                  <p>Proficient: Java, JavaScript (React.js, Node.js), SQL, Spring Boot, JWT</p>
+                  <p>Familiar: Bash, C++, Machine Learning, Streamlit</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
+                <div class="skills-section">
+                  <h3>DevOps & Cloud</h3>
+                  <p>Proficient: Docker, Kubernetes, Terraform, Jenkins, AWS (EC2, S3, Lambda)</p>
+                  <p>Familiar: CI/CD, Prometheus, Grafana, Ansible</p>
                 </div>
               </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -259,79 +270,54 @@
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Sneaker App</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/amberIS01/solemate'"
-              >
-                Github
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button> -->
+      <div class="project-container">
+        <div class="project-card">
+          <div class="project-img" id="project1">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h3>Flashline: A Modern News Application</h3>
+          <div class="project-details">
+            <ul>
+              <li>Prepared a scalable full-stack platform with MongoDB, Express.js, React.js, and Node.js, processing 500+ articles/day.</li>
+              <li>Enhanced RESTful API efficiency, reducing data retrieval time by 25%.</li>
+              <li>Integrated NewsAPI.org for live news updates, boosting real-time content accessibility by 40%.</li>
+            </ul>
+            <div class="tech-stack">
+              <span>MongoDB</span>
+              <span>Express.js</span>
+              <span>React.js</span>
+              <span>Node.js</span>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">CI-CD</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/amberIS01/CI-CD-pipeline'"
-              >
-                Github
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button> -->
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/amberIS01/solemate'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img" id="project2">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Park and Ride Management System</h3>
+          <div class="project-details">
+            <ul>
+              <li>Built a secure authentication system using Spring Boot, JWT, and BCrypt.</li>
+              <li>Developed subscription & rewards management, boosting user retention by 30%.</li>
+              <li>Optimized REST APIs with Spring Boot, Hibernate, and MySQL, reducing query time by 25%.</li>
+              <li>Implemented role-based access control (RBAC) and Dockerized deployment for scalability.</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Spring Boot</span>
+              <span>JWT</span>
+              <span>MySQL</span>
+              <span>Docker</span>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">My Website</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/amberIS01/portfolio'"
-              >
-                Github
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button> -->
-            </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/amberIS01/CI-CD-pipeline'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
           </div>
         </div>
       </div>
@@ -352,7 +338,11 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p>sahilsingh8300@gmail.com</p>
+          <p><a href="mailto:sahilsingh8300@gmail.com">sahilsingh8300@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fas fa-phone icon contact-icon"></i>
+          <p>+91 7378050640</p>
         </div>
         <div class="contact-info-container">
           <img
@@ -360,7 +350,11 @@
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
-          <p><a href="https://www.linkedin.com/in/sahil-singh-a2732125b/">LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/sahil-singh-a2732125b/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fas fa-map-marker-alt icon contact-icon"></i>
+          <p>Greater Noida, India</p>
         </div>
       </div>
     </section>
